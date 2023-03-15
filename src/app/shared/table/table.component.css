@@ -1,0 +1,33 @@
+.table {
+  margin-top: 20px;
+  background-color: #bdb8b8;
+}
+.cdk-drag-preview {
+  background-color: #726e6e;
+  cursor: move;
+}
+.cdk-drag {
+  cursor: move;
+}
+.cdk-drag-placeholder {
+  opacity: 0.5;
+  background-color: #d3d3d3;
+}
+.addButton {
+  margin-left: 20px;
+}
+/* .progress-bar {
+  height: 15px;
+  box-shadow: 2px 2px 2px 2px;
+  width: 100%;
+} */
+.delete-button {
+  margin-left: 20px;
+  background-color: rgb(175, 92, 92);
+}
+.options-header {
+  margin-left: 20px;
+}
+.progress {
+  margin-top: 5px;
+}

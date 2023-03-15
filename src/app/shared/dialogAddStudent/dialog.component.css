@@ -1,0 +1,16 @@
+.title {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.form-control {
+  margin-top: 50px;
+  width: 250px;
+  margin-left: 20px;
+}
+.btn-primary {
+  margin-top: 50px;
+  margin-left: 50px;
+}
+.discard-button {
+  background-color: brown;
+}

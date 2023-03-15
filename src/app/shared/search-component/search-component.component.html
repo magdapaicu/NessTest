@@ -1,0 +1,24 @@
+<div class="filter grid-container">
+  <div class="col-1">
+    <input
+      class="form-control"
+      type="text"
+      #inputClass
+      placeholder="Enter the Class name"
+      [(ngModel)]="className"
+    />
+
+    <input
+      class="form-control"
+      type="text"
+      #inputTeacher
+      placeholder="Enter the Teacher name"
+      [(ngModel)]="teacherName"
+    />
+  </div>
+  <div class="col-2">
+    <button class="btn btn-primary filter-button" (click)="filterClasses()">
+      Filter
+    </button>
+  </div>
+</div>

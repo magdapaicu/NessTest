@@ -1,0 +1,19 @@
+<div class="title">
+  <h4>Enter the name of the new student</h4>
+  <input
+    [(ngModel)]="newStudent"
+    class="form-control"
+    type="text"
+    placeholder="Name"
+  />
+  <button class="btn btn-primary" type="submit" (click)="addStudent()">
+    Add
+  </button>
+  <button
+    class="btn btn-primary discard-button"
+    type="button"
+    (click)="onCloseDialog()"
+  >
+    Discard
+  </button>
+</div>

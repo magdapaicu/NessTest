@@ -1,0 +1,46 @@
+<table mat-table [dataSource]="dataSource" cdkDropList class="table">
+  <ng-container matColumnDef="number">
+    <th mat-header-cell *matHeaderCellDef>#</th>
+    <td mat-cell *matCellDef="let element; let i = index">
+      {{ i + 1 }}
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="className">
+    <th mat-header-cell *matHeaderCellDef>Class Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.name }}</td>
+  </ng-container>
+  <ng-container matColumnDef="teacherName">
+    <th mat-header-cell *matHeaderCellDef>Teacher Name</th>
+    <td mat-cell *matCellDef="let element">{{ element.teacher }}</td>
+  </ng-container>
+  <ng-container matColumnDef="classOccupancy">
+    <th mat-header-cell *matHeaderCellDef>Class Occupancy</th>
+    <td mat-cell *matCellDef="let element">
+      <app-occupancy
+        [existsStudents]="element.students.length"
+        [maxNoOfStudents]="element.maxNoOfStudents"
+      ></app-occupancy>
+    </td>
+  </ng-container>
+  <ng-container matColumnDef="options">
+    <th mat-header-cell *matHeaderCellDef class="options-header">Options</th>
+    <td mat-cell *matCellDef="let element">
+      <button
+        class="btn btn-primary delete-button"
+        (click)="deleteClass(element.id)"
+      >
+        Delete
+      </button>
+      <button
+        class="btn btn-primary addButton"
+        (click)="openAddDialog(element.id)"
+        [disabled]="isFull(element.students.length, element.maxNoOfStudents)"
+      >
+        Add Student
+      </button>
+    </td>
+  </ng-container>
+  <tr mat-header-row *matHeaderRowDef="displayColumns"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayColumns" cdkDrag></tr>
+</table>
+<app-search-component (search)="onSearch($event)"></app-search-component>
